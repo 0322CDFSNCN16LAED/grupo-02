@@ -5,26 +5,28 @@ const categoriesFilePath = path.join(__dirname, "../data/category.json"); //Path
 const allProducts = db.readJsonDB(productsFilePath);
 const allCategories = db.readJsonDB(categoriesFilePath);
 
-
 module.exports = {
-  home: (req, res) => {
-    res.render("index", {
-      productos: allProducts,
-      categorias: allCategories,
-    });
-  },
-  cart: (req, res) => {
-    const busqueda = allProducts.find((art) => {
-      return art.id == 14;
-    });
-    res.render("compras", {
-      art: busqueda,
-    });
-  },
-  envio: (req, res) => {
-    res.render("detalle-envios");
-  },
-  pago: (req, res) => {
-    res.render("detalle-pagos");
-  },
+    home: (req, res) => {
+        res.render("index", {
+            productos: allProducts,
+            categorias: allCategories,
+        });
+    },
+    cart: (req, res) => {
+        const busqueda = allProducts.find((art) => {
+            return art.id == 14;
+        });
+        res.render("compras", {
+            art: busqueda,
+        });
+    },
+    envio: (req, res) => {
+        res.render("detalle-envios");
+    },
+    pago: (req, res) => {
+        res.render("detalle-pagos");
+    },
+    product: (req, res) => {
+        res.render("product");
+    },
 };
