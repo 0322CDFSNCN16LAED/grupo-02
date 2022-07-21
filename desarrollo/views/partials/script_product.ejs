@@ -1,0 +1,50 @@
+<script>
+    function change_image(image) {
+        let id_img = document.getElementById("img_big_product");
+        let auxiliar;
+        switch (image) {
+            case 1:
+                auxiliar = "/images/uno.jpg";
+                break;
+            case 2:
+                auxiliar = "/images/dos.jpg";
+                break;
+            case 3:
+                auxiliar = "/images/tres.jpg";
+                break;
+            case 4:
+                auxiliar = "/images/cuatro.jpg";
+                break;
+            case 5:
+                auxiliar = "/images/cinco.jpg";
+                break;
+            case 6:
+                auxiliar = "/images/seis.jpg";
+                break;
+        }
+        id_img.src = auxiliar;
+    }
+/*
+===================================================================================================
+===================================================================================================
+*/
+    let open = document.getElementById("open_modal_product");
+    let open_02 = document.getElementById("open_modal_02_product");
+    let close = document.getElementById("close_modal_product");
+    let close_02 = document.getElementById("close_modal_02_product");
+    let container = document.getElementById("div_modal_container_product");
+    let container_02 = document.getElementById("div_modal_02_container_product");
+
+    open.addEventListener("click", () => {
+        container.classList.add("show");
+    });
+    open_02.addEventListener("click", () => {
+        container_02.classList.add("show");
+    });
+    close.addEventListener("click", () => {
+        container.classList.remove("show");
+    });
+    close_02.addEventListener("click", () => {
+        container_02.classList.remove("show");
+    });
+</script>
