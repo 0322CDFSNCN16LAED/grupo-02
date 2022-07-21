@@ -12,11 +12,10 @@ const cookies = require("cookie-parser");
 const mainRouter = require("./routes/main-routes");
 const userLogged = require("./middlewares/userLoggedMiddleware");
 
-
 app.use(
-  session({
-      secret: process.env.SESSION_SECRET || "Tremendo proyecto integrador",
-  })
+    session({
+        secret: process.env.SESSION_SECRET || "Tremendo proyecto integrador",
+    })
 );
 
 app.use(cookies());
@@ -24,7 +23,7 @@ app.use(userLogged);
 
 // Conexion al puerto 3010 "localhost"
 app.listen(3010, () => {
-  console.log("Port: 3010");
+    console.log("Port: 3010");
 });
 
 app.set("view engine", "ejs"); // Template engine
@@ -35,8 +34,7 @@ app.use(methodOverride("_method")); // Uso de PUT and DELETE
 
 app.use("/", mainRouter); // Routeo principal
 
-
 // Implementacion Error 404
 app.use((req, res, next) => {
-  res.status(404).render("not-found");
+    res.status(404).render("not-found");
 });
