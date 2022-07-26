@@ -1,0 +1,31 @@
+<div id="div_modal_container_product" class="div_modal_container_product">
+    <div id="div_modal_product" class="div_modal_product border">
+        <div class="div_modal_x_product">
+            <button id="close_modal_product" class="close_modal_product">X</button>
+        </div>
+
+        <div class="div_modal_details_product">
+            <p id="latitud" class="locate"></p>
+            <p id="longitud" class="locate"></p>
+            <p class="locate">(Próxima autorización, Google Maps API)</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    /* Sin depender de otra empresa (Google, Maps). */
+
+    let latitud = document.getElementById("latitud");
+    let longitud = document.getElementById("longitud");
+
+    let ubicacion = {};
+    let mostrar;
+    let locate;
+
+    mostrar = (ubicacion) => {
+        latitud.innerText = "Latitud: " + ubicacion.coords.latitude;
+        longitud.innerText = "Longitud: " + ubicacion.coords.longitude;
+    };
+
+    locate = () => navigator.geolocation.getCurrentPosition(mostrar);
+</script>

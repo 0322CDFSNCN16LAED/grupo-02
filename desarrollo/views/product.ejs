@@ -17,7 +17,8 @@
     <body class="body_class">
         <!-- Modales (popup). -->
 
-        <%- include("./partials/popups_product.ejs"); %>
+        <%- include("./partials/popups_one.ejs"); %> 
+        <%- include("./partials/popups_two.ejs"); %>
 
         <!-- Modales (popup). -->
 
@@ -58,7 +59,11 @@
                         <button id="open_modal_02_product" class="open_modal_product">
                             Formas de pago
                         </button>
-                        <button id="open_modal_product" class="open_modal_product">
+                        <button
+                            id="open_modal_product"
+                            class="open_modal_product"
+                            onclick="locate();"
+                        >
                             Tu ubicación
                         </button>
                         <hr class="hr" />
