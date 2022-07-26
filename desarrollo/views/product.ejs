@@ -15,14 +15,17 @@
     </head>
 
     <body class="body_class">
-        <!-- Modales (popup). -->
+        <!-- Header. -->
+        <%- include("./partials/header.ejs"); %>
+        <!-- Header. -->
 
-        <%- include("./partials/popups_one.ejs"); %> 
-        <%- include("./partials/popups_two.ejs"); %>
-
-        <!-- Modales (popup). -->
-
+        <!--
         <header class="header_product"></header>
+        -->
+
+        <!-- Modales (popup). -->
+        <%- include("./partials/popups_one.ejs"); %> <%- include("./partials/popups_two.ejs"); %>
+        <!-- Modales (popup). -->
 
         <main class="main_product">
             <section class="section_one_product flex">
